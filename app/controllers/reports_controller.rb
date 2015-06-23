@@ -4,10 +4,7 @@ class ReportsController < ApplicationController
   end
 
   def thank_you
-    @email = params[:email]
-    @name = params[:name]
-
-    ReportMailer.send_report.deliver_now
+    ReportMailer.send_report(params[:name], params[:email]).deliver_now
   end
 
   def all_data

@@ -5,10 +5,12 @@ class ReportMailer < ApplicationMailer
   #
   #   en.report_mailer.send_report.subject
   #
-  def send_report
-    @assembly = Assembly.find_by_name(params[:name])
+  def send_report(name, email)
+    @name = name
+    @email = email
+    @assembly = Assembly.find_by_name(name)
     @hits = []
-    genes = Gene.joins(sequence: [:assembly]).where('assemblies.name ="'+params[:name]+'"')
+    genes = Gene.joins(sequence: [:assembly]).where('assemblies.name ="'+name+'"')
     genes.each do |g|
       g.hits.each do |h|
         @hits << h
@@ -16,7 +18,6 @@ class ReportMailer < ApplicationMailer
     end
     @hits.sort! {|a, b| b.percent_similarity <=> a.percent_similarity}
 
-
-    mail to: "to@example.org"
+    mail to: "#{email}"
   end
 end

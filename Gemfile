@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'faker'
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem 'mail'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
