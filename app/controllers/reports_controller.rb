@@ -7,9 +7,4 @@ class ReportsController < ApplicationController
     ReportMailer.send_report(params[:name], params[:email]).deliver_now
   end
 
-  def all_data
-
-  end
-
-
 end
