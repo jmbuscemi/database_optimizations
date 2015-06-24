@@ -2,10 +2,13 @@
 
 ## Description
 
-Given an existing application which generates a report from a large data set, improve the efficiency of the report using database optimization methods.
+Provide lists of DNA Sequence baed on Assembly name from a large database.
+
+## Email Notification
+Because these database calls tend to produce rather large lists pages, and as more and more DNA Sequence data gets added to the database these list swill take longer and longer to load on a browser.  For this reason, email notifications have been added to the app.  The user will submit a request for a specific assembly by name, on the welcome page, along with the email address where they'd like to receive the list of hits for that name.  Once the request completes an email will be sent with the information.
+
 
 ## Metrics
-
 ### Seed/Run times
 * Original `rake db:seed` time = 25min
 * Original localhost runtime = 138sec
