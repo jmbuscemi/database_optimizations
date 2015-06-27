@@ -3,4 +3,6 @@ class Hit < ActiveRecord::Base
 
   validates :subject_id, presence: true
   validates :subject_type, presence: true
+
+  default_scope {order ("percent_similarity DESC")}
 end
