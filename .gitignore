@@ -17,3 +17,5 @@
 /tmp
 .DS_Store
 notes.md
+*.pdf
+a3_hits.txt
